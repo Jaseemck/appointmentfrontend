@@ -56,4 +56,42 @@
 
 }*/
 
+    //log user in from login page
+    if(isset($_POST['login'])){
+        $username = mysqli_real_escape_string($db, $_POST['admin']);
+        $password = mysqli_real_escape_string($db, $_POST['password_1']);
+
+
+    //ensure that form fields are filled properly
+    if(empty($username)){
+        array_push($errors, "username is required"); // add error to errors array
+    }
+    
+    if(empty($password)){
+        array_push($errors, "Password is required"); // add error to errors array
+    } 
+    if(count($errors)==0){
+        $password=md5($password);
+        $query = "SELECT * FROM adminuser WHERE username='$username' AND password='$password'";
+        $result=mysqli_query($db, $query);
+        if(mysqli_num_rows($result)==1){
+            //log user in
+            $_SESSION['username']=$username;
+            $_SESSION['success']="You are now logged in";
+            header('location: admin.php'); //redirect to home page            
+        }else{
+            array_push($errors, "Wrong username/password combination");
+        }
+    }        
+    }
+
+
+    //logout
+    if(isset($_GET['logout'])){
+        session_destroy();
+        unset($_SESSION['username']);
+        header('location: index.php');
+    }
+
+
 ?>

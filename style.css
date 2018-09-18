@@ -13,6 +13,19 @@ body{
     padding: 15px;
     text-align: center;
 }
+h2{
+    margin-right: 100px;
+}
+h4{
+    margin-left: 1150px;
+    color: #f8f8ff;
+    text-emphasis-color: blue;
+}
+a{
+    text-decoration: none;
+    color: black;
+    text-emphasis: blue;
+}
 form, .content{
     margin: 20px auto;
     border-radius: 0px 0px 10px 10px;
@@ -67,8 +80,20 @@ form, .content{
 }
 .bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(img/tree.jpg);
+     url(img/tree.jpg);
     height: 100vh;
     background-size: cover;
     background-position: center;
-  }
+}
+.logo img {
+    width: 70px;
+    height: 40px;
+    float: left;
+}
+.logbg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+     url(img/logbg.jpeg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
