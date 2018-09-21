@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 
 </head>
-<body>
 <div class="logbg">
+<body>
 <div class="header">
     <h2>Admin Login</h2>
 </div>
@@ -25,11 +25,12 @@
     <label>Password:</label>
     <input type="password" name="password">
 </div>
-<div class="input-group">
+<div class="input-group btns">
     <button type="submit" name="login" class="btn">Login</button>
+    <br><br>
+<p> &nbsp Not an admin? <a href="index.php"><strong> Appointment</strong></a></p>
 </div>
-<p>Not an admin? <a href="index.php">Book Appointment</a></p>
 </form>
-</div>
 </body>
+</div>
 </html>

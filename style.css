@@ -4,10 +4,9 @@
 }
 body{
     font-size: 100%;
-    background-color: #f8f8ff;
 }
 .header{
-    background-color: green;
+    background-color: #616161;
     color: white;
     border-radius: 10px 10px 0px 0px;
     padding: 15px;
@@ -66,24 +65,17 @@ form, .content{
     text-transform: uppercase;
 }
 .btn:hover {
-    background-color: green;
+    background-color: whitesmoke;
     transition: all 0.5s ease-in;
 }
-.error {
+.errors {
     width: 92%;
     margin: 0px auto;
     padding: 10px;
-    border: 1px solid #a94442;
-    color: blue;
+    border: 1px solid black;
+    color: whitesmoke;
     border-radius: 5px;
     text-align: left;
-}
-.bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-     url(img/tree.jpg);
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
 }
 .logo img {
     width: 70px;
@@ -92,8 +84,44 @@ form, .content{
 }
 .logbg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-     url(img/logbg.jpeg);
-    height: 100vh;
+     url(img/loginbg.jpg);
     background-size: cover;
     background-position: center;
+    height: 100vh;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #616161;
+    color: white;
+    text-align: center;
+}
+.adminlogout{
+    text-align: right;
+    color: aquamarine
+}
+.display{
+    text-align: center;
+    border: 2px;
+    color: #f8f8ff;
+    margin-left: 450px;
+}
+.btns{
+    margin-left: 55px;
+}
+.bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+     url(img/indexbg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 120vh;
+}
+.adbg{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+     url(img/adminbg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 110vh;    
 }

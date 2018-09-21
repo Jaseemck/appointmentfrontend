@@ -18,7 +18,7 @@
     <h2>Appointment</h2>
     <h4><a href="login.php">Admin</a></h4>
 </div>
-<form method="post" action="appointment.php">
+<form method="post" action="index.php">
 <!-- display validation errors here -->
 <?php include("errors.php"); ?>
 <div class="input-group">
@@ -31,7 +31,7 @@
 </div>
 <div class="input-group">
     <label>Semester:</label>
-    <input type="text" name="semester">
+    <input type="text" name="semester" value="<?php echo $semester; ?>">
 </div>
 <div class="input-group">
     <label>E-mail</label>
@@ -39,7 +39,7 @@
 </div>
 <div class="input-group">
     <label>Subject:</label>
-    <input type="text" name="subject">
+    <input type="text" name="subject" value="<?php echo $subject; ?>">
 </div>
 <div class="input-group">
     <label>Date sought:</label>
@@ -52,6 +52,9 @@
 </div>
 
 </form>
+</div>
+<div class="footer">
+    <p>NSS COLLEGE OF ENGINEERING PALAKKAD</p>
 </div>
 </body>
 </html>
