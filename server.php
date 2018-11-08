@@ -91,6 +91,27 @@
         $sql = "INSERT INTO appointments (username, email, department, semester, subject, date)
                 VALUES ('$username', '$email', '$department', '$semester', '$subject', '$date')";
         mysqli_query($db, $sql);
+
+        
+        $from = "NSSCE Office<admin@nssceappointment.ml>";
+        $to = $username."<".$email.">";
+        $subject = "Apointment Succesful-NSSCE Office";
+        $body = "Hi,\n\nHow are you?";
+        $host = "smtp.gmail.com";
+        $musername = "aswin2dinesh";
+        $mpassword = "toosoonsuperman";
+        $headers = array ('From' => $from,'To' => $to,'Subject' => $subject);
+        $smtp = Mail::factory('smtp', array ('host' => $host,'auth' => true,'username' => $musername,'password' => $mpassword));
+        $mail = $smtp->send($to, $headers, $body);
+        if (PEAR::isError($mail)) 
+        {
+            echo("<p>" . $mail->getMessage() . "</p>");
+        }
+        else 
+        {
+            echo("<p>Message successfully sent!</p>");
+        }
+
         $_SESSION['username']=$username;
         $_SESSION['success']="You are now logged in";
         header('location: index.php'); //redirect to home page
