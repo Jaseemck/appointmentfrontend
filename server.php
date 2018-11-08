@@ -93,26 +93,25 @@
         mysqli_query($db, $sql);
 
         
-        $from = "NSSCE Office<admin@nssceappointment.ml>";
-        $to = $email;
-        $subject = "Apointment Succesful-NSSCE Office";
-        $body = "Hi,\n\nHow are you?";
-        $host = "smtp.gmail.com";
-        $musername = "aswin2dinesh";
-        $mpassword = "toosoonsuperman";
-        $port = 587;
-        $headers = array ('From' => $from,'To' => $to,'Subject' => $subject);
-        $smtp = Mail::factory('smtp', array ('host' => $host,'auth' => true, 'port'=>$port,
-                                 'username' => $musername,'password' => $mpassword));
-        $mail = $smtp->send($to, $headers, $body);
-        if (PEAR::isError($mail)) 
-        {
-            echo("<p>" . $mail->getMessage() . "</p>");
-        }
-        else 
-        {
-            echo("<p>Message successfully sent!</p>");
-        }
+        require 'phpmailer/PHPMailerAutoload.php';
+        $mail = new PHPMailer;
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->Port = 587;
+        $mail->SMTPSecure = 'tls';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'aswin2dinesh';
+        $mail->Password = 'toosoonsuperman';
+        $mail->setFrom('admin@nssceappointment.ml', 'NSSCE OFFICE');
+        $mail->addReplyTo('aswin2dinesh@gmail.com', 'AswinDinesh');
+        $mail->addAddress($email);
+        $mail->Subject = "Appointment Success for $date";
+        $mail->msgHTML("Appointment fixed for $username on $date");
+        if (!$mail->send()) {
+           $error = "Mailer Error: " . $mail->ErrorInfo;
+            ?><script>alert('<?php echo $error ?>. Contact Admin.');</script><?php
+        } 
+            
 
         $_SESSION['username']=$username;
         $_SESSION['success']="You are now logged in";
