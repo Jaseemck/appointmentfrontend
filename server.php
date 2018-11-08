@@ -93,7 +93,7 @@
         mysqli_query($db, $sql);
         $to = $email;
         $subject = "Email Confirmation-NSSCE Office";
-        $message = "Appointment Successful for $username on  $date";
+        $message = "Appointment Successful for ".$username." on ".$date";
         $message .= "Be there at least 5 minutes before";
         $header = "From: NO_REPLY_admin@nssceappointment.ml";
         mail($to,$subject,$message,$header);*/
