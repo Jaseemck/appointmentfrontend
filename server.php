@@ -11,7 +11,7 @@
     $data="";
     $errors = array();
     // connect to the databse
-    $db = mysqli_connect('localhost','root','password','appointment');
+    $db = mysqli_connect('localhost','root','','appointment');
 
     // if the register button is clicked
     if (isset($_POST['appoint'])){
@@ -100,7 +100,7 @@
         $mail->Port = 587;
         $mail->SMTPSecure = 'tls';
         $mail->SMTPAuth = true;
-        $mail->Username = 'aswin2dinesh';
+        $mail->Username = 'aswin2dinesh@gmail.com';
         $mail->Password = 'toosoonsuperman';
         $mail->setFrom('admin@nssceappointment.ml', 'NSSCE OFFICE');
         $mail->addReplyTo('aswin2dinesh@gmail.com', 'AswinDinesh');
@@ -110,12 +110,14 @@
         if (!$mail->send()) {
            $error = "Mailer Error: " . $mail->ErrorInfo;
             ?><script>alert('<?php echo $error ?>. Contact Admin.');</script><?php
-        } 
+        }else{
+            echo "<script>alert(`$error`Contact Admin.)</script>";
+        }
             
 
         $_SESSION['username']=$username;
         $_SESSION['success']="You are now logged in";
-        header('location: index.php'); //redirect to home page
+        //header('location: index.php'); //redirect to home page
     }
 
 }
