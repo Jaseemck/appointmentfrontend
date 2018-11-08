@@ -91,11 +91,11 @@
         $sql = "INSERT INTO appointments (username, email, department, semester, subject, date)
                 VALUES ('$username', '$email', '$department', '$semester', '$subject', '$date')";
         mysqli_query($db, $sql);
-      /*  $to=$email;
-        $subject="Email Confirmation-NSSCE Office";
-        $message="Appointment Successful for $username on  $date";
-        $message.="Be there at least 5 minutes before";
-        $header="From: NO_REPLY_admin@nssceappointment.ml"
+        $to = $email;
+        $subject = "Email Confirmation-NSSCE Office";
+        $message = "Appointment Successful for $username on  $date";
+        $message .= "Be there at least 5 minutes before";
+        $header = "From: NO_REPLY_admin@nssceappointment.ml";
         mail($to,$subject,$message,$header);*/
         $_SESSION['username']=$username;
         $_SESSION['success']="You are now logged in";
