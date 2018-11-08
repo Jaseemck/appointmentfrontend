@@ -11,7 +11,7 @@
     $data="";
     $errors = array();
     // connect to the databse
-    $db = mysqli_connect('localhost','root','password','appointment');
+    $db = mysqli_connect('localhost','root','','appointment');
 
     // if the register button is clicked
     if (isset($_POST['appoint'])){
@@ -94,20 +94,23 @@
 
         
         require 'phpmailer/PHPMailerAutoload.php';
-        $mail = new PHPMailer;
+        $mail = new PHPMailer();
         $mail->isSMTP();
+        $mail->SMTPDebug = 2;
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'tls';
+        $mail->SMTPAutoTLS = false;
         $mail->Host = 'smtp.gmail.com';
         $mail->Port = 587;
-        $mail->SMTPSecure = 'tls';
-        $mail->SMTPAuth = true;
+
         $mail->Username = 'aswin2dinesh@gmail.com';
         $mail->Password = 'toosoonsuperman';
         $mail->setFrom('admin@nssceappointment.ml', 'NSSCE OFFICE');
         $mail->addReplyTo('aswin2dinesh@gmail.com', 'AswinDinesh');
         $mail->addAddress($email);
         $mail->Subject = "Appointment Success for $date";
-        $mail->msgHTML("Appointment fixed for $username on $date");
-        if (!$mail->send()) {
+        $mail->Body = "Appointment fixed for $username on $date";
+        if (!$mail->Send()) {
            $error = "Mailer Error: " . $mail->ErrorInfo;
             ?><script>alert('<?php echo $error ?>. Contact Admin.');</script><?php
         }else{
@@ -117,7 +120,7 @@
 
         $_SESSION['username']=$username;
         $_SESSION['success']="You are now logged in";
-        //header('location: index.php'); //redirect to home page
+        header('location: index.php'); //redirect to home page
     }
 
 }
