@@ -42,6 +42,10 @@
         array_push($errors, "Subject is required"); // add error to errors array
     }
 
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        array_push($errors, "Wrong email format"); 
+    }
+    
     $today=date("Y-m-d");
     if(empty($date)){
         array_push($errors, "Date is required");
