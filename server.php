@@ -96,7 +96,7 @@
         $message = "Appointment Successful for ".$username." on ".$date";
         $message .= "Be there at least 5 minutes before";
         $header = "From: NO_REPLY_admin@nssceappointment.ml";
-        mail($to,$subject,$message,$header);*/
+        mail($to,$subject,$message,$header);
         $_SESSION['username']=$username;
         $_SESSION['success']="You are now logged in";
         header('location: index.php'); //redirect to home page
