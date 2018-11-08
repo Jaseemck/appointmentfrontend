@@ -94,7 +94,7 @@
 
         
         $from = "NSSCE Office<admin@nssceappointment.ml>";
-        $to = $username."<".$email.">";
+        $to = $email;
         $subject = "Apointment Succesful-NSSCE Office";
         $body = "Hi,\n\nHow are you?";
         $host = "smtp.gmail.com";
@@ -102,7 +102,7 @@
         $mpassword = "toosoonsuperman";
         $port = 465;
         $headers = array ('From' => $from,'To' => $to,'Subject' => $subject);
-        $smtp = Mail::factory('smtp', array ('host' => $host,'auth' => true, 'port'=$port,
+        $smtp = Mail::factory('smtp', array ('host' => $host,'auth' => true, 'port'=>$port,
                                  'username' => $musername,'password' => $mpassword));
         $mail = $smtp->send($to, $headers, $body);
         if (PEAR::isError($mail)) 
