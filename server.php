@@ -100,7 +100,7 @@
         $host = "smtp.gmail.com";
         $musername = "aswin2dinesh";
         $mpassword = "toosoonsuperman";
-        $port = 465;
+        $port = 587;
         $headers = array ('From' => $from,'To' => $to,'Subject' => $subject);
         $smtp = Mail::factory('smtp', array ('host' => $host,'auth' => true, 'port'=>$port,
                                  'username' => $musername,'password' => $mpassword));
