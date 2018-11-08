@@ -11,7 +11,7 @@
     $data="";
     $errors = array();
     // connect to the databse
-    $db = mysqli_connect('localhost','root','','appointment');
+    $db = mysqli_connect('localhost','root','password','appointment');
 
     // if the register button is clicked
     if (isset($_POST['appoint'])){
