@@ -102,7 +102,8 @@
         $mpassword = "toosoonsuperman";
         $port = 465;
         $headers = array ('From' => $from,'To' => $to,'Subject' => $subject);
-        $smtp = Mail::factory('smtp', array ('host' => $host,'auth' => true, 'port'=$port, username' => $musername,'password' => $mpassword));
+        $smtp = Mail::factory('smtp', array ('host' => $host,'auth' => true, 'port'=$port,
+                                 'username' => $musername,'password' => $mpassword));
         $mail = $smtp->send($to, $headers, $body);
         if (PEAR::isError($mail)) 
         {
