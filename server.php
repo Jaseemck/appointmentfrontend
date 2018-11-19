@@ -9,9 +9,10 @@
     $admin="";
     $password="";
     $data="";
+    $apptime="";
     $errors = array();
     // connect to the databse
-    $db = mysqli_connect('localhost','root','password','appointment');
+    $db = mysqli_connect('localhost','root','','appointment');
 
     // if the register button is clicked
     if (isset($_POST['appoint'])){
@@ -78,6 +79,14 @@
     {
         array_push($errors, "Booking for this date is already full");
     }
+    if($rowcount>1 && $rowcount<3)
+    {
+        $apptime="10:00 A.M - 12:00 P.M";
+    }
+    if($rowcount>3 && $rowcount<6)
+    {
+        $apptime="2:00 A.M - 4:00 P.M";
+    }
 
 
     if(date('D', strtotime($date)) == 'Sat' || date('D', strtotime($date)) == 'Sun') { 
@@ -108,19 +117,27 @@
         $mail->setFrom('admin@nssceappointment.ml', 'NSSCE OFFICE');
         $mail->addReplyTo('aswin2dinesh@gmail.com', 'AswinDinesh');
         $mail->addAddress($email);
-        $mail->Subject = "Appointment Success for $date";
+        $mail->Subject = "Appointment Success for $date. Please be there at $apptime. Thank You!";
         $mail->Body = "Appointment fixed for $username on $date";
         if (!$mail->Send()) {
            $error = "Mailer Error: " . $mail->ErrorInfo;
             ?><script>alert('<?php echo $error ?>. Contact Admin.');</script><?php
         }else{
-            echo "<script>alert(`$error`Contact Admin.)</script>";
+            echo "<script>alert(Contact Admin)</script>";
         }
             
 
         $_SESSION['username']=$username;
         $_SESSION['success']="You are now logged in";
         header('location: index.php'); //redirect to home page
+        
+            //echo 'alert("Password Invalid!")';
+            //header('location: index.php'); //redirect to home page
+            /*echo '<script>';
+            echo 'alert("BOOKING SUCCESSFULL!");';
+            echo 'location.href="index.php"';
+            echo '</script>';*/
+        
     }
 
 }

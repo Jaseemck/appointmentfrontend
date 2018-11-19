@@ -2,67 +2,30 @@
     margin: 0px;
     padding: 0px;
 }
-body{
-    font-size: 100%;
+
+body {
+    background-color: black;
+    background: url(img/indexbg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
-.header{
-    background-color: #616161;
-    color: white;
-    border-radius: 10px 10px 0px 0px;
-    padding: 15px;
-    text-align: center;
-}
-h2{
-    margin-right: 100px;
-}
-h4{
-    margin-left: 1150px;
-    color: #f8f8ff;
-    text-emphasis-color: blue;
-}
+
 a{
     text-decoration: none;
     color: black;
     text-emphasis: blue;
 }
-form, .content{
-    margin: 20px auto;
-    border-radius: 0px 0px 10px 10px;
-    width: 30%;
-    padding: 15px;
-    background: transparent;
-    border: 2px  brown;
-}
-.input-group{
-    margin: 10px 0px 10px 0px;
-}
-.input-group label{
+
+
+label{
     display: block;
     text-align: left;
-    color: antiquewhite;
+    color: whitesmoke;
     margin: 3px;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-}
-.input-group input{
-    height: 25px;
-    width: 93%;
-    padding: 5px 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px brown;
-}
-.btn {
-    border: 1px brown;
-    padding: 10px;
-    text-align: center;
-    margin-top: 28px;
-    margin-left: 100px;
-    color: black;
-    background-color: gray;
-    text-decoration: none;
-    font-size: 13px;
-    text-transform: uppercase;
 }
 .btn:hover {
     background-color: whitesmoke;
@@ -89,15 +52,7 @@ form, .content{
     background-position: center;
     height: 100vh;
 }
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #616161;
-    color: white;
-    text-align: center;
-}
+
 .adminlogout{
     text-align: right;
     color: aquamarine
@@ -108,20 +63,4 @@ form, .content{
     color: #f8f8ff;
     margin-left: 450px;
 }
-.btns{
-    margin-left: 55px;
-}
-.bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-     url(img/indexbg.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 120vh;
-}
-.adbg{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-     url(img/adminbg.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 110vh;    
-}
+
