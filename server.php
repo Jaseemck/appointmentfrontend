@@ -10,6 +10,7 @@
     $password="";
     $data="";
     $apptime="";
+    $alertq="";
     $errors = array();
     // connect to the databse
     $db = mysqli_connect('localhost','root','','appointment');
@@ -83,7 +84,7 @@
     {
         $apptime="10:00 A.M - 12:00 P.M";
     }
-    if($rowcount>3 && $rowcount<6)
+    if($rowcount>2 && $rowcount<6)
     {
         $apptime="2:00 A.M - 4:00 P.M";
     }
@@ -99,7 +100,7 @@
     if(count($errors)==0){
         $sql = "INSERT INTO appointments (username, email, department, semester, subject, date)
                 VALUES ('$username', '$email', '$department', '$semester', '$subject', '$date')";
-        mysqli_query($db, $sql);
+        $alertq=mysqli_query($db, $sql);
 
         
         require 'phpmailer/PHPMailerAutoload.php';
@@ -117,10 +118,14 @@
         $mail->setFrom('admin@nssceappointment.ml', 'NSSCE OFFICE');
         $mail->addReplyTo('aswin2dinesh@gmail.com', 'AswinDinesh');
         $mail->addAddress($email);
-        $mail->Subject = "Appointment Success for $date. Please be there at $apptime. Thank You!";
-        $mail->Body = "Appointment fixed for $username on $date";
+        $mail->Subject = "NSSCE APPOINTMENT BOOKING SUCCESSFUL";
+        $mail->Body = " Appointment Confirmed for $username
+                        Date :  $date
+                        Time : $apptime
+                        Please keep required documents with you.
+                        Thank You for booking with us!";
         if (!$mail->Send()) {
-           $error = "Mailer Error: " . $mail->ErrorInfo;
+            $error = "Mailer Error: " . $mail->ErrorInfo;
             ?><script>alert('<?php echo $error ?>. Contact Admin.');</script><?php
         }else{
             echo "<script>alert(Contact Admin)</script>";
@@ -129,15 +134,23 @@
 
         $_SESSION['username']=$username;
         $_SESSION['success']="You are now logged in";
-        header('location: index.php'); //redirect to home page
+        //header('location: index.php'); //redirect to home page
         
-            //echo 'alert("Password Invalid!")';
+            /*//echo 'alert("Password Invalid!")';
             //header('location: index.php'); //redirect to home page
-            /*echo '<script>';
+            echo '<script>';
             echo 'alert("BOOKING SUCCESSFULL!");';
-            echo 'location.href="index.php"';
+            //echo 'location.href="index.php"';
             echo '</script>';*/
-        
+            if($alertq)
+            {
+                //echo 'alert("Password Invalid!")';
+                //header('location: index.php'); //redirect to home page
+                echo '<script>';
+                echo 'alert("BOOKING SUCCESSFULL!");';
+                echo 'window.location.href="index.php"';
+                echo '</script>';
+            }
     }
 
 }
