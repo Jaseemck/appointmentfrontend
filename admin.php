@@ -22,7 +22,7 @@ if (empty($_SESSION['admin'])){
     </div>
     <h2>Appointment</h2>
     <div class="adminlogout">
-    <?php if (isset($_SESSION["admin"])): ?>
+    <?php if (isset($_SESSION["regno"])): ?>
         <p><a href="admin.php?logout='1'">Logout</a></p>
     <?php endif ?>
     </div>

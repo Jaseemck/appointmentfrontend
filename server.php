@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    //session_start();
     $username = "";
     $email = "";
     $department = "";
@@ -8,6 +8,7 @@
     $date = "";
     $admin="";
     $password="";
+    $regno="";
     $data="";
     $apptime="";
     $alertq="";
@@ -72,9 +73,12 @@
     }
 
     $rr="SELECT * FROM appointments WHERE date='$date'";
+    //$rr1="SELECT * FROM appointments WHERE regno='$regno'";
+    //$result1=mysqli_query($db,$rr1);
     $result=mysqli_query($db,$rr);
     // Return the number of rows in result set
     $rowcount=mysqli_num_rows($result);
+    //$rowcount1=mysqli_num_rows($result1);
 
     if($rowcount>5)
     {
@@ -88,7 +92,10 @@
     {
         $apptime="2:00 A.M - 4:00 P.M";
     }
-
+    /*if($rowcount1>5)
+    {
+        array_push($errors, "You have already booked for this date!");
+    }*/
 
     if(date('D', strtotime($date)) == 'Sat' || date('D', strtotime($date)) == 'Sun') { 
         array_push($errors, "Booking isnt available for this date");
@@ -148,7 +155,7 @@
                 //header('location: index.php'); //redirect to home page
                 echo '<script>';
                 echo 'alert("BOOKING SUCCESSFULL!");';
-                echo 'window.location.href="index.php"';
+                echo 'window.location.href="appoint.php"';
                 echo '</script>';
             }
     }
@@ -156,7 +163,7 @@
 }
 
     //log user in from login page
-    if(isset($_POST['login'])){
+/*    if(isset($_POST['login'])){
         $admin = mysqli_real_escape_string($db, $_POST['admin']);
         $password = mysqli_real_escape_string($db, $_POST['password']);
 
@@ -189,9 +196,9 @@
     //logout
     if(isset($_GET['logout'])){
         session_destroy();
-        unset($_SESSION['username']);
+        unset($_SESSION['regno']);
         header('location: index.php');
     }
-
+*/
 
 ?>

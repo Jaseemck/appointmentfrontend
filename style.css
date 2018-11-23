@@ -40,11 +40,6 @@ label{
     border-radius: 5px;
     text-align: left;
 }
-.logo img {
-    width: 70px;
-    height: 40px;
-    float: left;
-}
 .logbg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
      url(img/loginbg.jpg);
@@ -64,3 +59,9 @@ label{
     margin-left: 450px;
 }
 
+@media screen and (max-width: 765px) {
+.logo{
+    width: 60px;
+    height: 30px;
+}
+}

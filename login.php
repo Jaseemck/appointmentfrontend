@@ -26,7 +26,7 @@
     <input type="password" name="password">
 </div>
 <div class="input-group btns">
-    <button type="submit" name="login" class="btn">Login</button>
+    <button type="submit" name="studlogin" class="btn">Login</button>
     <br><br>
 <p> &nbsp Not an admin? <a href="index.php"><strong> Appointment</strong></a></p>
 </div>

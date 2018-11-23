@@ -1,99 +1,108 @@
-<?php include('server.php'); ?>
+<?php include('loginback.php'); ?>
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NSSCE OFFICE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+<html lang="en">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="js/loader.js"></script>
-<!--loader-->
+    <head>
 
-</head>
-<body>
-<!--loader-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>NSSCE OFFICE APPOINTMENT</title>
 
-<!--navbar-->
-<nav class="navbar navbar-default navbar-fixed-top">
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
-        <img src="img/logo.png" style="height:10%; width:10%;">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="logo">
+    <img src="img/logo.png" style="height:10%; width:10%;">
     </div>
-</nav> 
-<!--navbar end-->
-<!--<a class="navbar-brand" href="#" style="padding:0px;">
-<img src="img/logo.png" style="height:10%; width:10%;">
-</a>-->
-<div class="page-header">
-    <br><br><br>
-<div class="container">
-<form method="post" action="index.php">
-<!-- display validation errors here -->
-<?php include("errors.php"); ?>
-<div class="form-group col-6">
-    <label>Student Name:</label>
-    <input type="text" class="form-control" name="username" value="<?php echo $username; ?>">
-</div>
-<div class="form-group col-6">
-    <label>Department:</label>
-    <input type="text" class="form-control" name="department" value="<?php echo $department; ?>">
-</div>
-<!--<div class="form-group col-6">
-    <label>Semester:</label>
-    <input type="text" class="form-control"  name="semester" value="<?php echo $semester; ?>">
-</div>-->
-<div class="form-group col-6">
-  <label for="sel1">Semester:</label>
-  <select class="form-control" name="semester" value="<?php echo $semester; ?>" id="sel1">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-    <option>6</option>
-    <option>7</option>
-    <option>8</option>
-  </select>
-</div> 
-<!--end-->
-<div class="form-group col-6">
-    <label>E-mail</label>
-    <input type="text" class="form-control" name="email" value="<?php echo $email; ?>">
-</div>
-<!--<div class="form-group col-6">
-    <label>Subject:</label>
-    <input type="text" class="form-control" name="subject" value="<?php echo $subject; ?>">
-</div>-->
-<div class="form-group col-6">
-<label>Subject:</label><br>
-&nbsp;&nbsp;<label class="radio-inline"><input type="radio" name="subject" value="Cerificate related">Cerificate Related</label>
-<label class="radio-inline"><input type="radio" name="subject" value="Fees Related">Fees Related</label>
-<label class="radio-inline"><input type="radio" name="subject" value="Others">Others</label> 
-</div>
-<!--end-->
-<div class="form-group col-6">
-    <label>Date sought:</label>
-    <input type="date" class="form-control"  name="date" value="<?php echo $date; ?>">
-</div>
+    <br>
+        
+    </div>
+    </nav> 
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>NSSCE</strong> Login Form</h1>
+                            <div class="description">
+                            	<p>
+	                            	Login with your college admission number!
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                            <?php include("errors.php"); ?>
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Login to book your appointments</h3>
+                            		<p>Enter your username and password to log on:</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-key"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+			                    <form role="form" action="index.php" method="post" class="login-form">
+			                    	<div class="form-group">
+			                    		<label class="sr-only" for="form-username">Username</label>
+			                        	<input type="text" name="regno" placeholder="Username..." class="form-username form-control" id="form-username">
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-password">Password</label>
+			                        	<input type="password" name="logpass" placeholder="Password..." class="form-password form-control" id="form-password">
+			                        </div>
+			                        <button type="submit" name="studlogin" class="btn">Sign in!</button>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
 
-<br>
-<div class="form-group col-6">
-    <button type="submit" name="appoint" class="btn btn-success btn-block">Book Appointment</button>
-</div>
-</div>
 
-</form>
-</div>
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
 
-</body>
+    </body>
+
 </html>
