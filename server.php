@@ -18,7 +18,7 @@
 
     // if the register button is clicked
     if (isset($_POST['appoint'])){
-        $username = mysqli_real_escape_string($db, $_POST['username']);
+        //$username = mysqli_real_escape_string($db, $_POST['username']);
         $department = mysqli_real_escape_string($db, $_POST['department']);
         $email = mysqli_real_escape_string($db, $_POST['email']);
         $semester = mysqli_real_escape_string($db, $_POST['semester']);
@@ -26,9 +26,9 @@
         $date = mysqli_real_escape_string($db, $_POST['date']);
 
     //ensure that form fields are filled properly
-    if(empty($username)){
+   /* if(empty($username)){
         array_push($errors, "username is required"); // add error to errors array
-    }
+    }*/
     
     if(empty($department)){
         array_push($errors, "Department is required"); // add error to errors array
