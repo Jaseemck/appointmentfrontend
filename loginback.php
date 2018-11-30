@@ -5,7 +5,7 @@
     $logpass="";
     $errors = array();
 
-    $db = mysqli_connect('localhost','root','','appointment');
+    $db = mysqli_connect('localhost','root','password','appointment');
     //log user in from login page
     if(isset($_POST['studlogin'])){
         $regno = mysqli_real_escape_string($db, $_POST['regno']);
