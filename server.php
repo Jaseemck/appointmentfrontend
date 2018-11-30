@@ -84,7 +84,7 @@
     {
         array_push($errors, "Booking for this date is already full");
     }
-    if($rowcount>1 && $rowcount<3)
+    if($rowcount>0 && $rowcount<3)
     {
         $apptime="10:00 A.M - 12:00 P.M";
     }
